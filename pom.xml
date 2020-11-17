@@ -30,10 +30,27 @@
 	</repositories>
 	<properties>
 		<java.version>1.8</java.version>
-		<mybatis.version>3.3.1.tmp</mybatis.version>
+		<mybatis.plus.version>3.4.0</mybatis.plus.version>
+		<fast.json>1.2.73</fast.json>
+		<ldap.version>5.1.1</ldap.version>
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
 		<!-- sprint boot web -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -50,8 +67,10 @@
 		</dependency>
 		<!-- sprint boot Ldap -->
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-ldap</artifactId>
+			<groupId>com.unboundid</groupId>
+			<artifactId>unboundid-ldapsdk</artifactId>
+			<version>${ldap.version}</version>
+			<scope>test</scope>
 		</dependency>
 		<!-- Kerberos -->
 
@@ -65,31 +84,34 @@
 
 
 		<!-- mybatis-plus begin -->
-		<!-- mybatis-plus -->
 		<dependency>
 			<groupId>com.baomidou</groupId>
 			<artifactId>mybatis-plus-boot-starter</artifactId>
-			<version>${mybatis.version}</version>
-		</dependency>
-		<!-- mybatis-plus代码生成器 -->
-		<dependency>
-			<groupId>com.baomidou</groupId>
-			<artifactId>mybatis-plus-generator</artifactId>
-			<version>${mybatis.version}</version>
+			<version>${mybatis.plus.version}</version>
 		</dependency>
 		<!-- mybatis-plus end -->
 
+		<!-- 远程操作命令 -->
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.junit.vintage</groupId>
-					<artifactId>junit-vintage-engine</artifactId>
-				</exclusion>
-			</exclusions>
+			<groupId>ch.ethz.ganymed</groupId>
+			<artifactId>ganymed-ssh2</artifactId>
+			<version>build210</version>
 		</dependency>
+
+		<!-- junit 单元测试 -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+		</dependency>
+
+		<!-- fast Json -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>${fast.json}</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
