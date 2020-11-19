@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/sync_users_bigdata.iml" filepath="$PROJECT_DIR$/.idea/sync_users_bigdata.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sync_users_java/sync_users_bigdata.iml" filepath="$PROJECT_DIR$/sync_users_java/sync_users_bigdata.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sync_users_web/sync_users_web.iml" filepath="$PROJECT_DIR$/sync_users_web/sync_users_web.iml" />
     </modules>
   </component>
 </project>
