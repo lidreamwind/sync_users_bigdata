@@ -1,0 +1,6 @@
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+192.168.233.65 cluster1.bigdata.com cluster1
+192.168.233.66 cluster2.bigdata.com cluster2
+192.168.233.67 cluster3.bigdata.com cluster3
+192.168.233.69 cluster5.bigdata.com cluster5

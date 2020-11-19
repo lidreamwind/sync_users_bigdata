@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thriteen.bgd.usersync.dao.dbmeta.ClusterIpsMapper">
+
+<!--    <resultMap id="selectAllIpsUserPasswdKeyFileRs" type="com.thriteen.bgd.usersync.entity.mapper.ClusterIpUserPasswdFileEntity">-->
+<!--        <result property="ip" column="ip_addr" />-->
+<!--        <result property="user" column="user_name"/>-->
+<!--        <result property="passwd" column="user_passwd"/>-->
+<!--    </resultMap>-->
+
+    <select id="selectAllIpsUserPasswdKeyFile" resultType="com.thriteen.bgd.usersync.entity.dto.dbmeta.ClusterIpUserPasswdFileDto">
+        select distinct ip_addr,user_name,user_passwd,user_keyfile from cluster_ips
+    </select>
+    <select id="selectCountByIpAddr" resultType="java.lang.Integer">
+        select count(*) as num from cluster_ips where ip_addr=#{ip} or full_name=#{ip} or short_name=#{ip}
+    </select>
+</mapper>
